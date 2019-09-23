@@ -62,13 +62,15 @@ function printDataSum(data){
   var template = Handlebars.compile(source);
 
 
+  for (var i = data.length-1; i < data.length; i++) {
+
 
     var context = {
-      sumArea: data.length-1,
-      sumVol: data.length
+      sumArea: data[i-1],
+      sumVol: data[i]
     };
 
-
+  }
   var html = template(context);
   target.append(html);
 }
